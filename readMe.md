@@ -15,5 +15,8 @@ Packages
    - server.js
    - .env 
    - .gitignore
+   - config dir/connectDb.js
+   - models dir
+        /userSchema/userSchema.js
+        /userModels/userModel.js
    
-# iamnaveen8851-todo_app_backend_revision
