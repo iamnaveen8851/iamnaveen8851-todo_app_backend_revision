@@ -2,7 +2,7 @@
 
 Packages
 
-- expressjs
+- express js
 - nodemon
 - dotenv
 - bcrypt
@@ -19,6 +19,7 @@ Packages
 - models dir
   /userSchema/userSchema.js
   /userModels/userModel.js
+- routes dir/userRouter.js
 
 ```
 
