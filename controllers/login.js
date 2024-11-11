@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const userLogin = async (req, res) => {
   const { email, password } = req.body;
+  
   try {
     //  get the existing user from email
     // check if the user already exists then check the password

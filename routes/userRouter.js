@@ -1,56 +1,14 @@
 const express = require("express");
-const userModel = require("../models/userModel/userModel");
-const bcrypt = require("bcrypt");
+const getUserData = require("../controllers/getUsers");
+const userSignUp = require("../controllers/signUp");
+const userLogin = require('../controllers/login')
 
 const userRouter = express.Router();
 
-userRouter.get("/", async (_, res) => {
-  try {
-    const usersData = await userModel.find();
-    res
-      .status(200)
-      .json({ message: "users data fetched successfully", usersData });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-userRouter.post("/signup", async (req, res) => {
-  const { username, email, password } = req.body;
+userRouter.get("/", getUserData);
 
-  try {
-    const existingUser = await userModel.findOne({ email });
-    // check if the user already exists
-    if (existingUser) {
-      return res.status(403).json({ message: "user already exists." });
-    }
+userRouter.post("/signup", userSignUp);
 
-    // hash the password
-    bcrypt.hash(password, 5, async (err, hash) => {
-      // Store hash in your password DB.
-      if (err) {
-        return res.status(403).json({ message: err.message });
-      }
-
-      // create a new user with hashed password
-      //   first method
-    //   const newUser = userModel.create({
-    //     username,
-    //     email,
-    //     password: hash,
-    //   });
-
-      // second method
-        const newUser = userModel({
-          username,
-          email,
-          password: hash,
-        });
-        await newUser.save();
-      res.status(201).json({ message: "User Registered Successfully" });
-    });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+userRouter.post("/login", userLogin);
 
 module.exports = userRouter;
