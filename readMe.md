@@ -16,10 +16,15 @@ Packages
 - .env
 - .gitignore
 - config dir/connectDb.js
+
 - models dir
   /userSchema/userSchema.js
   /userModels/userModel.js
+  /todoSchema/todoSchema.js
+  /todoModel/todoModel.js
+  
 - routes dir/userRouter.js
+
 
 ```
 
