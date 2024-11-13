@@ -23,7 +23,19 @@ Packages
   /todoSchema/todoSchema.js
   /todoModel/todoModel.js
   
-- routes dir/userRouter.js
+  
+- routes dir
+  /userRouter.js
+  /todoRouter.js
+
+
+- controllers dir
+  /signUp.js
+  /login.js
+  /getUsers.js
+  /addTodo.js
+  /getTodo.js
+
 
 
 ```
