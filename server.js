@@ -2,11 +2,16 @@ const express = require("express");
 require("dotenv").config();
 const connectDb = require("./config/connectDb");
 const userRouter = require("./routes/userRouter");
+const todoRouter = require("./routes/todoRouter");
 
 // Create a server
 const app = express();
+// internal middleware
 app.use(express.json());
+
+// use the routes
 app.use("/user", userRouter);
+app.use("/todo", todoRouter);
 
 const PORT = process.env.PORT || 8080;
 
