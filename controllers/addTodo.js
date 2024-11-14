@@ -2,7 +2,8 @@ const todoModel = require("../models/todoModel/todoModel");
 
 const addTodo = async (req, res) => {
   try {
-    const newTodo = await todoModel(req.body);
+    const newTodo = new todoModel(req.body);
+
     await newTodo.save();
     res
       .status(201)

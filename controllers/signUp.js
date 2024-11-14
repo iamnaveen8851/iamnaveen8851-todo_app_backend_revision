@@ -27,7 +27,7 @@ const userSignUp = async (req, res) => {
       //   });
 
       // second method
-      const newUser = userModel({
+      const newUser = new userModel({
         username,
         email,
         password: hash,

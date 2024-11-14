@@ -35,6 +35,8 @@ Packages
   /getUsers.js
   /addTodo.js
   /getTodo.js
+  /updateTodo.js
+  /deleteTodo.js
 
 
 
