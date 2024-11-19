@@ -22,8 +22,8 @@ Packages
   /userModels/userModel.js
   /todoSchema/todoSchema.js
   /todoModel/todoModel.js
-  
-  
+
+
 - routes dir
   /userRouter.js
   /todoRouter.js
@@ -38,7 +38,9 @@ Packages
   /updateTodo.js
   /deleteTodo.js
 
+- middlewares dir
+  /authMiddleware.js
+
 
 
 ```
-

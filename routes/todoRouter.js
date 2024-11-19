@@ -3,10 +3,11 @@ const addTodo = require("../controllers/addTodo");
 const getTodo = require("../controllers/getTodo");
 const updateTodo = require("../controllers/updateTodo");
 const deleteTodo = require("../controllers/deleteTodo");
+const auth = require("../middlewares/authMiddleware");
 
 const todoRouter = express.Router();
 
-todoRouter.get("/", getTodo);
+todoRouter.get("/", auth, getTodo);
 
 todoRouter.post("/addTodo", addTodo);
 
