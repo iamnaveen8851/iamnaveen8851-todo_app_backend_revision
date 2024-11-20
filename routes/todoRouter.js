@@ -9,7 +9,7 @@ const todoRouter = express.Router();
 
 todoRouter.get("/", auth, getTodo);
 
-todoRouter.post("/addTodo", addTodo);
+todoRouter.post("/addTodo", auth, addTodo);
 
 todoRouter.patch("/updateTodo/:id", updateTodo);
 
