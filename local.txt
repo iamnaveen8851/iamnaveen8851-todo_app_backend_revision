@@ -1,0 +1,6 @@
+1. get the cookie in authMiddleware and verify with jwt 
+2. try to decode it 
+
+
+
+

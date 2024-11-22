@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const userLogin = async (req, res) => {
   const { email, password } = req.body;
-  
+
   try {
     //  get the existing user from email
     // check if the user already exists then check the password
@@ -34,9 +34,20 @@ const userLogin = async (req, res) => {
       { expiresIn: "2d" }
     );
 
+    // res
+    //   .status(200)
+    //   .json({ message: "User Logged in successfully", token: token });
+
+    // Set token in HttpOnly cookie
     res
+      .cookie("jwt", token, {
+        httpOnly: true, // Prevent access from JavaScript
+        secure: process.env.NODE_ENV === "production", // Send only over HTTPS in production
+        sameSite: "Strict", // CSRF protection
+        maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days in milliseconds
+      })
       .status(200)
-      .json({ message: "User Logged in successfully", token: token });
+      .json({ message: "User Logged in successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
