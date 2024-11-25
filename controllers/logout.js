@@ -1,7 +1,7 @@
 const userLogout = async (req, res) => {
   try {
     res
-      .clearCookie("token", {
+      .clearCookie("jwtToken", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "Strict",

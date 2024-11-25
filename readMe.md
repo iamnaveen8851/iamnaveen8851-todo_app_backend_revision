@@ -32,6 +32,7 @@ Packages
 - controllers dir
   /signUp.js
   /login.js
+  /logout.js
   /getUsers.js
   /addTodo.js
   /getTodo.js
@@ -41,6 +42,12 @@ Packages
 - middlewares dir
   /authMiddleware.js
 
-
-
 ```
+
+**************************************
+
+
+## Todo Backend is ready to deploy
+
+
+

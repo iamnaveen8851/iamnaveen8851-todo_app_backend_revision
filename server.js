@@ -3,10 +3,12 @@ require("dotenv").config();
 const connectDb = require("./config/connectDb");
 const userRouter = require("./routes/userRouter");
 const todoRouter = require("./routes/todoRouter");
+const cookieParser = require("cookie-parser");
 
 // Create a server
 const app = express();
 // internal middleware
+app.use(cookieParser());
 app.use(express.json());
 
 // use the routes

@@ -27,6 +27,14 @@ const userLogin = async (req, res) => {
       return res.status(401).json({ message: "Invalid Password." });
     }
 
+    //get the existing user token if the user already logged in
+    const existingToken = req.cookies.jwtToken;
+    if (existingToken) {
+      const decoded = jwt.verify(existingToken, process.env.SECURITY_KEY);
+      return res.status(200).json({ message: "User Already Logged in." });
+    }
+
+    // Assign token to login user
     const token = jwt.sign(
       { userId: existingUser._id, username: existingUser.username },
       //   added expiry time of the token
@@ -34,13 +42,9 @@ const userLogin = async (req, res) => {
       { expiresIn: "2d" }
     );
 
-    // res
-    //   .status(200)
-    //   .json({ message: "User Logged in successfully", token: token });
-
     // Set token in HttpOnly cookie
     res
-      .cookie("jwt", token, {
+      .cookie("jwtToken", token, {
         httpOnly: true, // Prevent access from JavaScript
         secure: process.env.NODE_ENV === "production", // Send only over HTTPS in production
         sameSite: "Strict", // CSRF protection
