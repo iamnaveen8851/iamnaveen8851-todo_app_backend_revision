@@ -4,10 +4,19 @@ const connectDb = require("./config/connectDb");
 const userRouter = require("./routes/userRouter");
 const todoRouter = require("./routes/todoRouter");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 // Create a server
 const app = express();
+
+// setup CORS configuration
+const corsOptions = {
+  origin: `http://localhost:5173`, // frontend url
+  credentials: true, // Allow cookies to be sent
+};
+
 // internal middleware
+app.use(cors(corsOptions)); // Enable CORS
 app.use(cookieParser());
 app.use(express.json());
 

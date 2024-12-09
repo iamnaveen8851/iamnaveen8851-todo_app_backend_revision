@@ -8,6 +8,7 @@ Packages
 - bcrypt
 - jsonwebtoken or jwt
 - mongoose
+- cors
 
 ### Structure of todo backend
 
