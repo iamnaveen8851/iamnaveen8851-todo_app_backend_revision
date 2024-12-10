@@ -16,7 +16,7 @@ const corsOptions = {
 };
 
 // internal middleware
-app.use(cors()); // Enable CORS
+app.use(cors(corsOptions)); // Enable CORS
 app.use(cookieParser());
 app.use(express.json());
 
