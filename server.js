@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-fp(3000, function (err, freePort) {
+fp(3000, 9000, function (err, freePort) {
   if (err) {
     console.error(err);
     return;
@@ -59,7 +59,7 @@ fp(3000, function (err, freePort) {
         `Server listening on PORT NO. ${freePort} and DB is connected`
       );
     } catch (error) {
-      console.log(error.message);
+      console.error("Error connecting to DB:", error.message);
     }
   });
 });
