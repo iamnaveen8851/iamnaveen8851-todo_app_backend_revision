@@ -9,6 +9,8 @@ Packages
 - jsonwebtoken or jwt
 - mongoose
 - cors
+- cookie-parser 
+- find-free-port
 
 ### Structure of todo backend
 
