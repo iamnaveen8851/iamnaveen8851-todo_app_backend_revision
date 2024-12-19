@@ -47,14 +47,11 @@ const userLogin = async (req, res) => {
       .cookie("jwtToken", token, {
         httpOnly: true, // Prevent access from JavaScript
         secure: process.env.NODE_ENV === "production", // Send only over HTTPS in production
-        sameSite: "Lax", // CSRF protection
+        sameSite: "Strict", // CSRF protection
         maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days in milliseconds
       })
       .status(200)
-      .json({
-        message: "User Logged in successfully",
-        user: existingUser.username,
-      });
+      .json({ message: "User Logged in successfully", user: existingUser.username });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
