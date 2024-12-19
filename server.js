@@ -31,7 +31,7 @@ app.use(express.json());
 app.use("/user", userRouter);
 app.use("/todo", todoRouter);
 
-const PORT = process.env.PORT || 8080;
+// const PORT = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
   res.send(`Welcome to Todo App Server!`);
