@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "title": "Learn Cookies",
+      "status": true
+    },
+    {
+      "title": "Learn MongoDB",
+      "status": true
+    },
+    {
+      "title": "Learn DSA",
+      "status": false
+    },
+    {
+      "title": "Learn Next Js",
+      "status": true
+    },
+    {
+      "title": "Learn Backend with MongoDB",
+      "status": true
+    },
+    {
+      "title": "Learn Chakra UI",
+      "status": true
+    }
+    
+  ]
+}
