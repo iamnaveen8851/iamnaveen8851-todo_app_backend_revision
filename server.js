@@ -18,7 +18,10 @@ const app = express();
 
 // // setup CORS configuration ----> for production
 const corsOptions = {
-  origin: `https://todo-app-frontend-redux.vercel.app`, // frontend url
+  origin:
+    process.env.NODE_ENV === "production"
+      ? `https://todo-app-frontend-redux.vercel.app`
+      : `http://localhost:5173`, // frontend url
   credentials: true, // Allow cookies to be sent
 };
 
