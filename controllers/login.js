@@ -47,7 +47,7 @@ const userLogin = async (req, res) => {
       .cookie("jwtToken", token, {
         httpOnly: true, // Prevent access from JavaScript
         secure: process.env.NODE_ENV === "production", // Send only over HTTPS in production
-        sameSite: "Strict", // CSRF protection
+        sameSite: "none", // CSRF protection
         maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days in milliseconds
       })
       .status(200)
