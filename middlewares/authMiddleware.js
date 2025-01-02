@@ -17,7 +17,6 @@ const auth = async (req, res, next) => {
     // verify a token symmetric - synchronous
     var decoded = jwt.verify(jwtToken, process.env.SECURITY_KEY);
 
-    
     const { userId, username } = decoded;
     req.body.userId = userId;
     req.body.username = username;

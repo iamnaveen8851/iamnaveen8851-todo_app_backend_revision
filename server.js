@@ -12,18 +12,16 @@ const app = express();
 // ----- for DEV mode ------
 // setup CORS configuration
 // const corsOptions = {
-//   origin: `http://localhost:5173`, // frontend url
+//   origin: process.env.DEVELOPMENT_URL, // frontend url
 //   credentials: true, // Allow cookies to be sent
 // };
 
 // // setup CORS configuration ----> for production
 
 const corsOptions = {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? process.env.PRODUCTION_URL
-      : "",
-      // process.env.DEVELOPMENT_URL, // frontend url
+  origin: [process.env.DEVELOPMENT_URL, process.env.PRODUCTION_URL],
+
+  // process.env.DEVELOPMENT_URL, // frontend url
   credentials: true, // Allow cookies to be sent
 };
 
