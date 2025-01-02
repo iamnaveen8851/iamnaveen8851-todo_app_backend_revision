@@ -22,7 +22,8 @@ const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
       ? process.env.PRODUCTION_URL
-      : process.env.DEVELOPMENT_URL, // frontend url
+      : "",
+      // process.env.DEVELOPMENT_URL, // frontend url
   credentials: true, // Allow cookies to be sent
 };
 
