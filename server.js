@@ -11,19 +11,19 @@ const app = express();
 
 // ----- for DEV mode ------
 // setup CORS configuration
-const corsOptions = {
-  origin: process.env.PRODUCTION_URL, // frontend url
-  credentials: true, // Allow cookies to be sent
-};
+// const corsOptions = {
+//   origin: process.env.PRODUCTION_URL, // frontend url
+//   credentials: true, // Allow cookies to be sent
+// };
 
 // // setup CORS configuration ----> for production
 
-// const corsOptions = {
-//   origin: [process.env.DEVELOPMENT_URL, process.env.PRODUCTION_URL],
+const corsOptions = {
+  origin: [process.env.DEVELOPMENT_URL, process.env.PRODUCTION_URL],
 
-//   // process.env.DEVELOPMENT_URL, // frontend url
-//   credentials: true, // Allow cookies to be sent
-// };
+  // process.env.DEVELOPMENT_URL, // frontend url
+  credentials: true, // Allow cookies to be sent
+};
 
 // internal middleware
 app.use(cors(corsOptions)); // Enable CORS
