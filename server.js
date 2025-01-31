@@ -19,7 +19,11 @@ const app = express();
 // // setup CORS configuration ----> for production
 
 const corsOptions = {
-  origin: [process.env.DEVELOPMENT_URL, process.env.PRODUCTION_URL],
+  origin: [
+    process.env.DEVELOPMENT_URL,
+    process.env.PRODUCTION_URL,
+    process.env.DEP_URL,
+  ],
 
   // process.env.DEVELOPMENT_URL, // frontend url
   credentials: true, // Allow cookies to be sent
