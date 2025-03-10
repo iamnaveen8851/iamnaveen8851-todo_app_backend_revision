@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">Dynamic Form</h1>
+      <h1 className="text-2xl font-bold mb-6">Dynamic Form hello</h1>
       <DynamicForm schema={formSchema} onSubmit={handleSubmit} />
     </div>
   );
